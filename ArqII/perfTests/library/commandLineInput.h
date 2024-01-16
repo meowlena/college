@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-int arguments( int argc, char *argv[] )  {
+int inputHandler( int argc, char *argv[] )  {
     // argv[0] holds the name of the program itself
     // so, argc>1 hold line arguments
 
