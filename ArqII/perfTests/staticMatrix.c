@@ -10,7 +10,7 @@ int main(int argc, char *argv[])  {
         return 1;
     }
 
-    //atoi is a function that converts str to int
+    // atoi is a function that converts str to int
     int size = atoi(argv[1]);
 
     // static allocation of the matrices
