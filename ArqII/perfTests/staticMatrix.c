@@ -3,7 +3,7 @@
 #include <time.h>
 
 #include "./library/commandLineInput.h"
-#include "./library/randomMatrix.h"
+#include "./library/matrixUtils.h"
 
 int main(int argc, char *argv[])  {
     if (inputHandler(argc, argv) == 1){
@@ -44,29 +44,9 @@ int main(int argc, char *argv[])  {
     }
  
     // Print the elements of the array
-    printf("The elements of the matrix1 are: \n");
-    for (int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++){
-            printf("%.0f ", matrix1[i][j]);
-        }
-        printf("\n");
-    }
-
-    printf("The elements of the matrix2 are: \n");
-    for (int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++){
-            printf("%.0f ", matrix2[i][j]);
-        }
-        printf("\n");
-    }
-
-    printf("The elements of the result are: \n");
-    for (int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++){
-            printf("%.0f ", result[i][j]);
-        }
-        printf("\n");
-    }
+    printMatrix(size, matrix1, "matrix1");
+    printMatrix(size, matrix2, "result");
+    printMatrix(size, result, "result");
 
     return 0;
 }
