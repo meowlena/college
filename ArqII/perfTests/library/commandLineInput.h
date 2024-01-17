@@ -16,7 +16,7 @@ int inputHandler (int argc, char *argv[])  {
         return 0;
       }
       else {
-        printf("Invalid array size.\n");
+        printf("Invalid matrix size.\n");
         
         return 1;
       }

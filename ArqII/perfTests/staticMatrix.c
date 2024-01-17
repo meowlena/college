@@ -45,7 +45,7 @@ int main(int argc, char *argv[])  {
  
     // Print the elements of the array
     printMatrix(size, matrix1, "matrix1");
-    printMatrix(size, matrix2, "result");
+    printMatrix(size, matrix2, "matrix2");
     printMatrix(size, result, "result");
 
     return 0;
