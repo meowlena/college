@@ -53,3 +53,4 @@ dkms.conf
 
 # Outputs 
 ArqII/perfTests/output/*
+ArqII/perfTests/library/output/*

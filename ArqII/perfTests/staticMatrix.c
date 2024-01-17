@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include "./library/commandLineInput.h"
 
-int main( int argc, char *argv[] )  {
-    inputHandler(argc, argv);
+int main(int argc, char *argv[])  {
+    if (inputHandler(argc, argv) == 1){
+        return 1;
+    }
 
     //atoi is a function that converts str to int
     int size = atoi(argv[1]);
@@ -20,4 +22,5 @@ int main( int argc, char *argv[] )  {
         printf("%d ", arr[i]);
     }
 
+    return 0;
 }
