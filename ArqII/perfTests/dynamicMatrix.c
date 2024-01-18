@@ -13,6 +13,7 @@ int main(int argc, char *argv[])  {
     // atoi is a function that converts str to int
     int size = atoi(argv[1]);
 
+    // create seed to generate random values to populate matrices
     time_t t;
     srand(time(&t));
 
@@ -21,14 +22,15 @@ int main(int argc, char *argv[])  {
     float** matrix2 = generateRandomMatrix(size);
     float** result = multiplicateMatrices(size, matrix1, matrix2);
 
-    // Print the elements of the matrix
+    // print the elements of the matrix
     printMatrixByPointer(size, matrix1, "matrix1");
     printMatrixByPointer(size, matrix2, "matrix2");
     printMatrixByPointer(size, result, "result");
 
+    // free matrices
     freeMatrix(size, matrix1);
     freeMatrix(size, matrix2);
     freeMatrix(size, result);
-    
+
     return 0;
 }
