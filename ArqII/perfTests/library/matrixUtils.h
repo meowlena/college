@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 float** freeMatrix(int size, float** matrix) {
     for (int i = 0; i < size; i++){
