@@ -8,28 +8,28 @@
 float** generateRandomMatrix(int size) {
     float **matrix = (float **)malloc(size * sizeof(float *));
     
-    srand(time(NULL));
-
     for (int i = 0; i < size; i++) {
-        matrix[size] = (float *)malloc(size * sizeof(float));
+        matrix[i] = (float *)malloc(size * sizeof(float));
     }
+
+    srand(time(NULL));
 
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
-            matrix[i][j] = (rand() % 10);
+            *(*(matrix+i) + j) = (rand() % 10);
         }
     }
 
     return matrix;
 }
 
-float** multiplicateMatrices(int size, float matrix1[size][size], float matrix2[size][size]) {
+float** multiplicateMatrices(int size, float** matrix1, float** matrix2) {
     float **result = (float **)malloc(size * sizeof(float *));
     
     srand(time(NULL));
 
     for (int i = 0; i < size; i++) {
-        result[size] = (float *)malloc(size * sizeof(float));
+        result[i] = (float *)malloc(size * sizeof(float));
     }
 
     for (int i = 0; i < size; i++){
@@ -38,10 +38,10 @@ float** multiplicateMatrices(int size, float matrix1[size][size], float matrix2[
 
                 for (int k = 0; k < size; k++)
                 {
-                    sum += matrix1[i][k] * matrix2[k][j];
+                    sum += (*(*(matrix1 + i) + k)) * (*(*(matrix2 + k) + j));
                 }
 
-                result[i][j] = sum;
+                *(*(result + i) + j) = sum;
             }
         }
 
@@ -53,6 +53,16 @@ void printMatrix(int size, float matrix[size][size], char matrixName[]) {
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
             printf("%.0f ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void printMatrixByPointer(int size, float** matrix, char matrixName[]) {
+    printf("The elements of the %s are: \n", matrixName);
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            printf("%.0f ", *(*(matrix+i) + j));
         }
         printf("\n");
     }
