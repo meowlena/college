@@ -14,14 +14,11 @@ int main(int argc, char *argv[])  {
     int size = atoi(argv[1]);
 
     // dynamic allocation of the matrices
-    float** matrix1;
-    float** matrix2;
-
-    matrix1 = generateRandomMatrix(size);
-    matrix2 = generateRandomMatrix(size);
+    float** matrix1 = generateRandomMatrix(size);
+    float** matrix2 = generateRandomMatrix(size);
     float** result = multiplicateMatrices(size, matrix1, matrix2);
 
-    // Print the elements of the array
+    // Print the elements of the matrix
     printMatrixByPointer(size, matrix1, "matrix1");
     printMatrixByPointer(size, matrix2, "matrix2");
     printMatrixByPointer(size, result, "result");

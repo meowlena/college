@@ -5,14 +5,23 @@
 #include <stdlib.h>
 #include <time.h>
 
+float** freeMatrix(int size, float** matrix) {
+    for (int i = 0; i < size; i++){
+        free(*(matrix+i));
+    }
+    return NULL;
+}
+
 float** generateRandomMatrix(int size) {
-    float **matrix = (float **)malloc(size * sizeof(float *));
+    time_t t;
+    
+    srand(time(&t));
+
+    float** matrix = (float **)malloc(size * sizeof(float *));
     
     for (int i = 0; i < size; i++) {
-        matrix[i] = (float *)malloc(size * sizeof(float));
+        *(matrix + i) = (float *)malloc(size * sizeof(float));
     }
-
-    srand(time(NULL));
 
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
@@ -24,9 +33,7 @@ float** generateRandomMatrix(int size) {
 }
 
 float** multiplicateMatrices(int size, float** matrix1, float** matrix2) {
-    float **result = (float **)malloc(size * sizeof(float *));
-    
-    srand(time(NULL));
+    float** result = (float **)malloc(size * sizeof(float *));
 
     for (int i = 0; i < size; i++) {
         result[i] = (float *)malloc(size * sizeof(float));
