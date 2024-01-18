@@ -9,8 +9,6 @@ float* generateRandomVector(int size) {
     
     for (int i = 0; i < size*size; i++){
         *(matrix + i) = (rand() % 10);
-        printf("position: %d ", i);
-        printf("value: %.0f\n", *(matrix + i));
         
         for (int j = 0; j <= size; j++){
             
