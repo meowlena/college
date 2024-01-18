@@ -13,6 +13,9 @@ int main(int argc, char *argv[])  {
     // atoi is a function that converts str to int
     int size = atoi(argv[1]);
 
+    time_t t;
+    srand(time(&t));
+
     // dynamic allocation of the matrices
     float** matrix1 = generateRandomMatrix(size);
     float** matrix2 = generateRandomMatrix(size);
@@ -23,5 +26,9 @@ int main(int argc, char *argv[])  {
     printMatrixByPointer(size, matrix2, "matrix2");
     printMatrixByPointer(size, result, "result");
 
+    freeMatrix(size, matrix1);
+    freeMatrix(size, matrix2);
+    freeMatrix(size, result);
+    
     return 0;
 }

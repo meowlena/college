@@ -13,10 +13,6 @@ float** freeMatrix(int size, float** matrix) {
 }
 
 float** generateRandomMatrix(int size) {
-    time_t t;
-    
-    srand(time(&t));
-
     float** matrix = (float **)malloc(size * sizeof(float *));
     
     for (int i = 0; i < size; i++) {
