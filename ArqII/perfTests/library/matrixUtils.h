@@ -35,17 +35,17 @@ float** multiplicateMatrices(int size, float** matrix1, float** matrix2) {
     }
 
     for (int i = 0; i < size; i++){
-            for (int j = 0; j < size; j++){
-                float sum = 0;
+        for (int j = 0; j < size; j++){
+            float sum = 0;
 
-                for (int k = 0; k < size; k++)
-                {
-                    sum += (*(*(matrix1 + i) + k)) * (*(*(matrix2 + k) + j));
-                }
-
-                *(*(result + i) + j) = sum;
+            for (int k = 0; k < size; k++)
+            {
+                sum += (*(*(matrix1 + i) + k)) * (*(*(matrix2 + k) + j));
             }
+
+            *(*(result + i) + j) = sum;
         }
+    }
 
     return result;
 }
